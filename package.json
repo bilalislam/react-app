@@ -3,51 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13",
-    "yarn": "^1.0.2"
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-scripts": "1.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint:eslint": "eslint .",
-    "lint:stylelint": "stylelint .",
-    "lint": "yarn run lint:stylelint && yarn run lint:eslint",
-    "format": "prettier --print-width=100 --single-quote --trailing-comma all --write \"{src,__tests__}/**/*.js\"",
-    "lint-staged": "lint-staged",
-    "test": "jest",
-    "coverage":"yarn run test -- --coverage",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "coverage": "yarn run test -- --coverage"    
   },
   "devDependencies": {
-    "enzyme": "^2.9.1",
-    "enzyme-to-json": "^2.0.0",
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-prettier": "^2.2.0",
-    "eslint-plugin-react": "^7.3.0",
-    "jest": "^21.1.0",
-    "lint-staged": "^4.2.2",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.7.0",
-    "react-test-renderer": "^15.6.1",
-    "stylelint": "^8.1.1",
-    "stylelint-config-standard": "^17.0.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "yarn run format",
-      "git add"
-    ]
-  },
-  "pre-commit": "lint-staged",
-  "jest": {
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ],
-    "verbose": true
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-15": "^1.0.0",
+    "react-test-renderer": "^15.6.2"
   }
 }
