@@ -41,6 +41,15 @@ ShallowWrapper {
           </code>
            and save to reload.
 </p>,
+        <p>
+          Counter:
+          0
+</p>,
+        <button
+          onClick={[Function]}
+>
+          increment
+</button>,
       ],
       "className": "App",
     },
@@ -127,6 +136,35 @@ ShallowWrapper {
         ],
         "type": "p",
       },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Counter:",
+            0,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Counter:",
+          0,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "increment",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "increment",
+        "type": "button",
+      },
     ],
     "type": "div",
   },
@@ -160,6 +198,15 @@ ShallowWrapper {
             </code>
              and save to reload.
 </p>,
+          <p>
+            Counter:
+            0
+</p>,
+          <button
+            onClick={[Function]}
+>
+            increment
+</button>,
         ],
         "className": "App",
       },
@@ -245,6 +292,35 @@ ShallowWrapper {
             " and save to reload.",
           ],
           "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Counter:",
+              0,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Counter:",
+            0,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "increment",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "increment",
+          "type": "button",
         },
       ],
       "type": "div",
