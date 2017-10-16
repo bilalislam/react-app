@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css","App.css"],"names":[],"mappings":"AAAA,WACE,wBAA0B,CCD5B,WACE,wBAA0B","file":"static/css/main.ee48517d.css","sourcesContent":["body,input{\n  font-size:24px !important;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/index.css","body,input{\n  font-size:24px !important;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/App.css"],"sourceRoot":""}

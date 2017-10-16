@@ -1,37 +1,106 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
 
-class App extends Component {
+/*let channels = [
+  {name : 'Hardware Support'},
+  {name : 'Software Support'}
+]*/
 
-  state = {
-    counter: 0
-  }
-
-  increment = () => {
-    let { counter } = this.state;
-    counter += 1;
-    this.setState({
-      counter
-    });
+class Channel extends Component {
+  onClick(){
+    console.log('I was clicked',this.props.name)
   }
 
   render() {
-    let { counter } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to bilal</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>Counter:{counter}</p>
-        <button onClick={this.increment}>increment</button>
-      </div>
+      <li onClick={this.onClick.bind(this)}>{this.props.name} </li>
     );
   }
 }
 
-export default App;
+class ChannelList extends React.Component{
+  render(){
+    return (
+      <ul>
+        {this.props.channels.map(channel =>{
+         return (<Channel name={channel.name} /> )
+        }
+      )}
+      </ul>
+    )
+  }
+}
+
+class ChannelForm extends React.Component{
+  constructor(props){
+    super(props);
+    this.state ={};
+  }
+  
+  onChange(e){
+    this.setState({
+      channelName : e.target.value
+    });
+  }
+
+  onSubmit(e){
+      let {channelName} = this.state;
+      console.log(channelName);
+      
+      this.setState({
+        channelName:''
+      });
+      this.props.addChannel(channelName);
+      debugger;
+      e.preventDefault();
+  }
+  
+  render(){
+    return(
+      <form onSubmit={this.onSubmit.bind(this)}>
+        <input type = 'text'
+          onChange={this.onChange.bind(this)}
+          value={this.state.channelName}
+        />
+      </form>
+    )
+  }
+}
+
+
+
+class ChannelSection extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      channels:[
+        {name : 'Hardware Support'},
+        {name : 'Software Support'}
+      ]
+    };
+  }
+  
+  addChannel(name){
+    let {channels}=this.state;
+    channels.push({name:name});
+    this.setState({
+      channels:channels
+    });
+  }
+
+  render(){
+    return(
+      <div>
+        <ChannelList channels={this.state.channels} />
+        <ChannelForm addChannel={this.addChannel.bind(this)} />
+      </div>
+    )
+  }
+}
+
+
+ReactDOM.render(
+    <div>
+        <ChannelList channels={channels} /> <ChannelForm />
+    </div>
+    ,document.getElementById('app'));

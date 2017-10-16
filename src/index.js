@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import ChannelList from './App';
+import ChannelForm from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+
+  
+//ReactDOM.render(<ChannelList channels  = {channels}/> <ChannelForm />, document.getElementById('app'));
+
+/*ReactDOM.render(
+    <div>
+        <ChannelList channels={channels} /> <ChannelForm />
+    </div>
+    ,document.getElementById('app'));*/
+
+
+
